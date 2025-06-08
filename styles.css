@@ -160,7 +160,7 @@ body {
   color: #e5e5e5;
 }
 
-.hero-buttons {
+.hero-button {
   display: flex;
   gap: 14px;
 }
