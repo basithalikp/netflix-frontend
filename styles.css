@@ -128,6 +128,11 @@ body {
   cursor: pointer;
 }
 
+.profile-icon :hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+}
+
 /* Hero Section */
 .hero {
   height: 80vh;
@@ -230,6 +235,7 @@ body {
   overflow-x: auto;
   padding-bottom: 10px;
   scroll-behavior: smooth;
+  overflow: visible;
 }
 
 .content-row::-webkit-scrollbar {
@@ -255,29 +261,33 @@ body {
   min-width: 250px;
   height: 140px;
   border-radius: 8px;
-  overflow: hidden;
+  overflow: visible;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Simplified transition */
   flex-shrink: 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  display: flex;
 }
 
 .content-card:hover {
-  transform: scale(1.1);
+   /* Keep scaling for large window effect */
   z-index: 10;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  transform: scale(1.5);
 }
 
 .content-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: brightness 0.3s ease;
+  transition: filter 0.3s ease; /* Changed brightness to filter for clarity */
 }
 
 .content-card:hover img {
-  brightness: 0.4;
+  filter: brightness(0.4); /* Use filter for brightness adjustment */
 }
+
 
 /* Netflix Badge */
 .netflix-badge {
@@ -297,7 +307,7 @@ body {
   z-index: 2;
 }
 
-/* Card Overlay with Netflix-style Controls */
+/* Ensure overlay content scales appropriately */
 .card-overlay {
   position: absolute;
   top: 0;
@@ -317,6 +327,7 @@ body {
   justify-content: space-between;
   padding: 15px;
   color: white;
+  transform: scale(1); /* Ensure overlay scales with card */
 }
 
 .content-card:hover .card-overlay {
@@ -709,4 +720,24 @@ body {
   .footer-links {
     grid-template-columns: 1fr;
   }
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
