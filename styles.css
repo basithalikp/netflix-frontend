@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: "Montserrat", Arial, sans-serif;
   background-color: #141414;
   color: #fff;
 }
@@ -38,20 +38,42 @@ body {
   cursor: pointer;
 }
 
+.navbar-brand :hover {
+  transform: scale(1.12);
+  transition: transform 0.3s;
+}
+
 .navbar-nav {
   display: flex;
   gap: 20px;
 }
 
 .nav-link {
-  color: #e5e5e5;
+  color: black;
   text-decoration: none;
   font-size: 14px;
   transition: color 0.3s;
+  background-color: none;
+  padding : 8px 12px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  opacity: 1;
 }
 
-.nav-link:hover {
-  color: #b3b3b3;
+.nav-box {
+  background-color: #e5e5e5;
+  border-radius: 24px;
+  opacity: 0.4;
+  padding: 8px 12px;
+  transition: transform 0.5s, opacity 0.5s, padding 0.5s;
+}
+
+.nav-box:hover {
+  color: black;
+  opacity: 0.8;
+  transform: scaleX(1.2) scaleY(1.1);
+  transition: transform 0.5s, opacity 0.5s, padding 0.5s;
+  padding: 8px 32px;
 }
 
 .navbar-right {
@@ -63,6 +85,41 @@ body {
 .navbar-right i {
   font-size: 20px;
   cursor: pointer;
+}
+
+.search-box:hover {
+  background-color: #fff;
+  opacity: 0.8;
+  transform: scaleY(1.1);
+  width: 200px;
+  transition: transform 0.5s, opacity 0.5s, width 0.5s;
+  border-radius: 24px;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  color: black;
+  outline: none;
+  width: 200%;
+  padding-left: 10px;
+}
+
+.search-box {
+  position: relative;
+  background-color: #e5e5e5;
+  border-radius: 24px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
+  opacity: 0.4;
+  width: 40px;
+  transition: transform 0.5s, opacity 0.5s, width 0.5s;
+}
+
+.fas fa-search :hover {
+  border-color: #000;
 }
 
 .profile-icon {
@@ -88,6 +145,7 @@ body {
 }
 
 .hero-content {
+  display: flexbox;
   max-width: 600px;
 }
 
@@ -104,19 +162,19 @@ body {
 
 .hero-buttons {
   display: flex;
-  gap: 16px;
+  gap: 14px;
 }
 
 .btn {
   padding: 12px 24px;
   border: none;
-  border-radius: 4px;
+  border-radius: 24px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 2px;
   transition: all 0.3s;
 }
 
